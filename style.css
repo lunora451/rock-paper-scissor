@@ -1,0 +1,58 @@
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer {
+  color: blanchedalmond;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  background-color: #2c3e50;
+}
+.linkGithub {
+  height: 32px;
+  width: 32px;
+  margin: 0 6px;
+}
+
+.linkTop,
+.linkTop:hover,
+.linkTop:focus,
+.linkTop:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+.gitIcon {
+  display: block;
+  background-size: cover;
+  height: 32px;
+  width: 32px;
+  background-image: url("./assets/img/github.svg");
+}
+
+.iconTop {
+  display: block;
+  background-size: cover;
+  height: 32px;
+  width: 32px;
+  background-image: url("./assets/img/TheOdinProject.png");
+}
