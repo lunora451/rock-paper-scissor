@@ -4,9 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Rock Paper Scissor</title>
+    <link
+      rel="shortcut icon"
+      href="./assets/img/puit.svg"
+      type="image/x-icon"
+    />
     <link rel="stylesheet" href="style.css" />
-    <script src="index.js"></script>
+    <script src="index.js" defer></script>
   </head>
   <body>
     <div class="header">
@@ -25,19 +30,21 @@
       </div>
       <div class="positionChoiceWeaponContainer">
         <div class="choiceWeaponContainer">
-          <div class="rockChoice choiceContainer">
+          <div class="rockChoice choiceContainer" data-weapon="rock">
             <span class="rockIcon"></span>
           </div>
-          <div class="paperChoice choiceContainer">
+          <div class="paperChoice choiceContainer" data-weapon="paper">
             <span class="paperIcon"></span>
           </div>
-          <div class="scissorChoice choiceContainer">
+          <div class="scissorChoice choiceContainer" data-weapon="scissor">
             <span class="scissorIcon"></span>
           </div>
         </div>
       </div>
       <div class="positionHistoricBattle">
-        <div class="historicBattle"></div>
+        <div class="historicBattle">
+          <p class="titleHistory">Game History</p>
+        </div>
       </div>
     </div>
     <div class="footer">

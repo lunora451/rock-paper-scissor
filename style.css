@@ -18,14 +18,30 @@ body {
 
 .main {
   flex: 1;
-  background-color: rgb(179 189 192 / 24%);
+  background-color: #b3bdc03d;
 }
 
 .containerStart {
   max-height: 500px;
+  height: 200px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
+}
+
+.victoryMessageStyle {
+  color: #2ecc71;
+  background-color: #b3bdc03d;
+  padding: 8px 24px;
+  border: 2px solid #f8ab1d;
+}
+
+.loseMessageStyle {
+  color: #e74c3c;
+  padding: 8px 24px;
+  background-color: #b3bdc03d;
+  border: 2px solid #f8ab1d;
 }
 
 .start {
@@ -36,7 +52,7 @@ body {
   text-decoration: none;
   border: 2px solid #f8ab1d;
   color: #f8ab1d;
-  align-self: center;
+  /* align-self: center; */
 }
 .start:hover,
 .choiceContainer:hover {
@@ -127,14 +143,21 @@ body {
 
 .historicBattle {
   margin: 24px auto;
+  padding: 0 24px;
   border-radius: 6px;
   min-height: 200px;
   min-width: 500px;
   width: 60%;
-
-  text-align: center;
   border: 2px solid #f8ab1d;
 }
+
+.titleHistory {
+  text-decoration: underline;
+  font-size: larger;
+  font-weight: bold;
+  text-align: center;
+}
+
 /* Footer style */
 .footer {
   color: blanchedalmond;
@@ -144,6 +167,7 @@ body {
   height: 80px;
   background-color: #2c3e50;
 }
+
 .linkGithub {
   height: 32px;
   width: 32px;
