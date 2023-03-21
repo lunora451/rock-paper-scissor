@@ -158,11 +158,12 @@ function setResult(victory = null) {
   let pResult = document.createElement("p");
   if (victory) {
     pResult.textContent =
-      "Congrats !! You win you're better than a random function.";
+      "Congrats!! You win you're better than a random function.";
     pResult.classList.add("victoryMessageStyle");
   } else {
     pResult.textContent =
-      "Sadly, you lose against computer, computer goes brrrr bepbep";
+      "Sadly you lose against computer :O computer goes brrrr bepbep!";
+
     pResult.classList.add("loseMessageStyle");
   }
   play.insertBefore(pResult, buttonLaunchGame);
