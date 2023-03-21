@@ -1,16 +1,34 @@
-/*
-player one take rock paper scissor (use prompt and authorise string only)
-computer need function to random for rock paper scissor
+const scoreHuman = document.querySelector(".scoreHuman");
+const scoreComputer = document.querySelector(".scoreComputer");
+const historicBattle = document.querySelector(".historicBattle");
 
-need compare choice for determine winner 
-loop while one player don't win 5 times
-declare winner
+const score = document.querySelector(".positionScoreContainer");
+const weapon = document.querySelector(".positionChoiceWeaponContainer");
+const historic = document.querySelector(".positionHistoricBattle");
+const play = document.querySelector(".containerStart");
 
-ask for another game
+const mainContent = document.querySelector(".main");
 
-reset -> variable, 
+const choiceWeapon = document.querySelectorAll(".choiceWeaponContainer > div");
 
-*/
+let humanCountVictory = 0;
+let computerCountVictory = 0;
+let numberRound = 1;
+let numberOfGame = 0;
+const roundNeededForWin = 3;
+
+/* initialisation */
+setPage1();
+
+let buttonLaunchGame = document.querySelector(".start");
+
+buttonLaunchGame.addEventListener("click", function (e) {
+  if (numberOfGame) reset();
+
+  setPage2();
+});
+
+/************/
 
 let computerChoice = () => {
   switch (Math.floor(Math.random() * 3)) {
@@ -28,26 +46,6 @@ let computerChoice = () => {
       break;
   }
 };
-
-// let humanChoice = () => {
-//   // let weaponChoice = prompt(
-//   //   "Choose between rock, paper and scissor for battle your ennemy !!, What is ur weapon :"
-//   // );
-//   if (weaponChoice) {
-//     weaponChoice = weaponChoice.toLowerCase();
-//   }
-//   if (
-//     weaponChoice === "rock" ||
-//     weaponChoice === "paper" ||
-//     weaponChoice === "scissor"
-//   ) {
-//     return weaponChoice;
-//   } else {
-//     // alert(
-//     //   "Error : you need to enter a choice who is 'rock', 'paper' or 'scissor'"
-//     // );
-//   }
-// };
 
 let winnerName = (computerChoice, humanChoice) => {
   let winner = "";
@@ -99,12 +97,6 @@ let roundMessageResult = (computer, human, winner) => {
   }
 };
 
-let humanCountVictory = 0;
-let computerCountVictory = 0;
-let numberRound = 1;
-let numberOfGame = 0;
-const roundNeededForWin = 3;
-
 function round(humanWeapon = null) {
   if (!humanWeapon) return;
 
@@ -119,7 +111,6 @@ function round(humanWeapon = null) {
 }
 
 function updateScore(scoreH = 0, scoreC = 0) {
-  // TODO maj le dom
   let textC = scoreComputer.textContent;
   let textH = scoreHuman.textContent;
 
@@ -135,7 +126,6 @@ function updateScore(scoreH = 0, scoreC = 0) {
   didItEnd();
 }
 function updateHistoric(messageOfRound) {
-  // TODO maj dans le dom
   let pText = document.createElement("p");
 
   pText.textContent = `round ${numberRound} : ${messageOfRound}.`;
@@ -170,22 +160,6 @@ function setResult(victory = null) {
   numberOfGame++;
 }
 
-/*
- *
- *
- *
- *
- *
- */
-
-let buttonLaunchGame = document.querySelector(".start");
-
-buttonLaunchGame.addEventListener("click", function (e) {
-  if (numberOfGame) reset();
-  //remise a zero de l'encart des scores
-  setPage2();
-});
-
 function reset() {
   humanCountVictory = 0;
   computerCountVictory = 0;
@@ -204,23 +178,6 @@ function reset() {
 }
 
 // Start of Page
-
-const scoreHuman = document.querySelector(".scoreHuman");
-const scoreComputer = document.querySelector(".scoreComputer");
-const historicBattle = document.querySelector(".historicBattle");
-
-const score = document.querySelector(".positionScoreContainer");
-const weapon = document.querySelector(".positionChoiceWeaponContainer");
-const historic = document.querySelector(".positionHistoricBattle");
-const play = document.querySelector(".containerStart");
-
-const mainContent = document.querySelector(".main");
-
-// const rockChoice = document.querySelector(".rockChoice");
-// const paperChoice = document.querySelector(".paperChoice");
-// const scissorChoice = document.querySelector(".scissorChoice");
-
-const choiceWeapon = document.querySelectorAll(".choiceWeaponContainer > div");
 
 function setPage1() {
   mainContent.removeChild(score);
@@ -246,5 +203,3 @@ choiceWeapon.forEach((weapon) => {
     round(weapon.attributes[1].nodeValue);
   });
 });
-
-setPage1();
